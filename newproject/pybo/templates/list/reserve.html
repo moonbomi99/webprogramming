@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container my-3">
+    <form method="post" class="post-form">
+        {{form.csrf_token}}
+        {% include "form_errors.html" %}
+        <div class="form-group">
+            <center>
+            <h1>진료 예약</h1>
+            </center>
+            <label for="username">예약자 이름</label>
+            <input type="text" class="form-control" name="username" id="username" value="{{form.username.data or ''}}">
+        </div>
+        <div class="form-group">
+            <label for="phonenumber">전화번호</label>
+            <input type="tel" class="form-control" name="phonenumber" id="phonenumber" value="{{form.phonenumber.data or ''}}">
+        </div>
+
+        <div class="form-group">
+            <label for="selectcenter">진료 센터</label>
+            <select class="form-control" name="selectcenter" id="selectcenter" value="{{form.selectcenter.data or ''}}">
+                <option>척추센터</option>
+                <option>관절센터</option>
+                <option>건강검진센터</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="selectdate">예약 날짜</label>
+            <input type="date" class="form-control" name="selectdate" id="selectdate" value="{{form.selectdate.data or ''}}">
+            <label for="selecttime">예약 시간</label>
+            <input type="time" class="form-control" name="selecttime" id="selecttime" value="{{form.selecttime.data or ''}}">
+        </div>
+        <button type="submit" class="btn btn-primary"
+                onclick="alert('예약되었습니다')">예약하기</button>
+        <button type="reset" class="btn btn-primary">취소하기</button>
+    </form>
+</div>
+{% endblock %}

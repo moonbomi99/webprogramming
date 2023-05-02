@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container my-3">
+    <center>
+    <h1>보미 병원</h1>
+    <h5>TEL : 031-0000-0000</h5>
+    <h5>월~금 9:00 ~ 18:00</h5>
+    <h5>토 9:00 ~ 13:00</h5>
+    <img src="https://cdn-icons.flaticon.com/png/512/2749/premium/2749758.png?token=exp=1658902350~hmac=370625fec017e862a3e0aa185749e034"
+                                            style="width:400px;height:400px;">
+    <br>
+    <hr>
+    <h1>병원 층별 안내도</h1>
+    <img src="http://www.dtcityhospital.com/theme/basic/img/intro_03.jpg"
+                                            style="width:500px;height:500px;">
+
+    <br>
+    <hr>
+    <h1>오시는 길</h1>
+
+        <!-- * 카카오맵 - 지도퍼가기 -->
+<!-- 1. 지도 노드 -->
+<div id="daumRoughmapContainer1655409152940" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+<!--
+	2. 설치 스크립트
+	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+-->
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+<!-- 3. 실행 스크립트 -->
+<script charset="UTF-8">
+	new daum.roughmap.Lander({
+		"timestamp" : "1655409152940",
+		"key" : "2anbg",
+		"mapWidth" : "640",
+		"mapHeight" : "360"
+	}).render();
+</script>
+
+</center>
+</div>
+{% endblock %}
